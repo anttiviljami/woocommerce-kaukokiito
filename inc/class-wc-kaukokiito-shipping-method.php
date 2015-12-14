@@ -15,14 +15,13 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
    * @return void
    */
   public function __construct() {
-    $this->id                 = 'kaukokiito';
-    $this->title       = __( 'Kaukokiito' );
-    $this->method_description = __( 'Ship to a preset list of Kaukokiito Terminals' ); // 
+    $this->id = 'kaukokiito';
+    $this->method_title = __( 'Kaukokiito', 'woocommerce-kaukokiito' );
+    $this->method_description = __( 'Ship to a preset list of Kaukokiito Terminals', 'woocommerce-kaukokiito' ); 
     $this->init();
 
 		add_action( 'woocommerce_update_options_shipping_' . $this->id, array( $this, 'process_admin_options' ) );
   }
-
 
   /**
    * Init our plugin settings
@@ -36,12 +35,12 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
     $this->init_settings(); 
 
     // Define settings
-		$this->title        = $this->get_option( 'title' );
+		$this->title = $this->get_option( 'title' );
+		$this->enabled = $this->get_option( 'enabled' );
 		$this->availability = $this->get_option( 'availability' );
-		$this->countries    = $this->get_option( 'countries' );
-		$this->tax_status   = $this->get_option( 'tax_status' );
-		$this->cost         = $this->get_option( 'cost' );
-		$this->type         = $this->get_option( 'type', 'class' );
+		$this->countries = $this->get_option( 'countries' );
+		$this->tax_status = $this->get_option( 'tax_status' );
+		$this->cost = $this->get_option( 'cost' );
   }
 
   /**
@@ -121,6 +120,28 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
     // Register the rate
     $this->add_rate( $rate );
   }
+
+	/**
+	 * is_available function.
+	 *
+	 * @param array $package
+	 * @return bool
+	 */
+	public function is_available( $package ) {
+		if ( "no" === $this->enabled ) {
+			return false;
+		}
+		if ( 'including' === $this->availability ) {
+			if ( is_array( $this->countries ) && ! in_array( $package['destination']['country'], $this->countries ) ) {
+				return false;
+			}
+		} else {
+			if ( is_array( $this->countries ) && ( in_array( $package['destination']['country'], $this->countries ) || ! $package['destination']['country'] ) ) {
+				return false;
+			}
+		}
+		return apply_filters( 'woocommerce_shipping_' . $this->id . '_is_available', true, $package );
+	}
 }
 
 endif;
