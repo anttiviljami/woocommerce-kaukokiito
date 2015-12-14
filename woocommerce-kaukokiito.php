@@ -53,7 +53,16 @@ class WC_Kaukokiito {
    * Init our shipping method
    */
   public static function shipping_method_init() {
-    require_once 'inc/class-wc-kaukokiito-shipping-method.php';
+    require_once 'inc/class-wc-kaukokiito-shipping-method.php'; // WC_Kaukokiito_Shipping_Method
+    add_filter( 'woocommerce_shipping_methods', __CLASS__ . '::add_shipping_method' );
+  }
+
+  /**
+   * Add shipping methods to WooCommerce
+   */
+  public static function add_shipping_method( $methods ) {
+    $methods[] = 'WC_Kaukokiito_Shipping_Method';
+    return $methods;
   }
 }
 
