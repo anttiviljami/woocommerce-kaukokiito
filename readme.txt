@@ -24,7 +24,8 @@ None yet.
 
 == Screenshots ==
 
-None yet.
+1. Admin Screen
+2. Select your Terminal on Checkout
 
 == Changelog ==
 
