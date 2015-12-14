@@ -1,0 +1,13 @@
+{
+    "name": "anttiviljami/woocommerce-kaukokiito",
+    "description": "Fixed price shipping method for Kaukokiito terminals",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Antti Kuosmanen",
+            "email": "antti@seravo.fi"
+        }
+    ],
+    "require": {}
+}
