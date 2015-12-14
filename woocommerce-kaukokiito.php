@@ -23,22 +23,23 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! class_exists ( 'WC_Kaukokiito_Shipping_Method' ) ) :
+if ( ! class_exists ( 'WC_Kaukokiito' ) ) :
 
 /**
  * Our main plugin class
  */
-class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
+class WC_Kaukokiito {
  public static $instance;
 
   public static function init() {
     if ( is_null( self::$instance ) ) {
-      self::$instance = new WC_Kaukokiito_Shipping_Method();
+      self::$instance = new WC_Kaukokiito();
     }
     return self::$instance;
   }
   private function __construct() {
     add_action( 'plugins_loaded', array( $this, 'load_our_textdomain' ) );
+    add_action( 'woocommerce_shipping_init', array( $this, 'shipping_method_init' ) );
   }
 
   /**
@@ -48,9 +49,15 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
     load_plugin_textdomain( 'woocommerce-kaukokiito', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
   }
 
+  /**
+   * Init our shipping method
+   */
+  public static function shipping_method_init() {
+    require_once 'inc/class-wc-kaukokiito-shipping-method.php';
+  }
 }
 
 endif;
 
 // Init our plugin
-$woocommerce_kaukokiito = WC_Kaukokiito_Shipping_Method::init();
+$woocommerce_kaukokiito = WC_Kaukokiito::init();
