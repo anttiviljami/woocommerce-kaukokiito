@@ -58,7 +58,7 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
         'title' 		=> __( 'Method Title', 'woocommerce' ),
         'type' 			=> 'text',
         'description' 	=> __( 'This controls the title which the user sees during checkout.', 'woocommerce' ),
-        'default'		=> __( 'Lähimpään Kaukokiito-terminaaliin', 'woocommerce-kaukokiito' ),
+        'default'		=> __( 'Ship to Kaukokiito Terminal', 'woocommerce-kaukokiito' ),
         'desc_tip'		=> true
       ),
       'availability' => array(
@@ -96,7 +96,7 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
         'title' 		=> __( 'Cost', 'woocommerce' ),
         'type' 			=> 'text',
         'placeholder'	=> '',
-        'description'	=> __( 'Aseta kiinteä hinta', 'woocommerce-kaukokiito' ),
+        'description'	=> __( 'Set a fixed cost', 'woocommerce-kaukokiito' ),
         'default'		=> '',
         'desc_tip'		=> true
       )

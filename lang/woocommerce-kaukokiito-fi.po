@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Kaukokiito Shipping Method\n"
+"POT-Creation-Date: 2015-12-14 21:58+0200\n"
+"PO-Revision-Date: 2015-12-14 21:58+0200\n"
+"Last-Translator: Antti Kuosmanen <antti@seravo.fi>\n"
+"Language-Team: Antti Kuosmanen <antti@seravo.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: woocommerce-kaukokiito.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:19
+msgid "Kaukokiito"
+msgstr "Kaukokiito"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:20
+msgid "Ship to a preset list of Kaukokiito Terminals"
+msgstr "Toimita Kaukokiidon terminaalehin"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:52
+msgid "Enable/Disable"
+msgstr "Ota käyttöön/poista käytöstä"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:54
+msgid "Enable this shipping method"
+msgstr "Ota käyttöön tämä toimitustapa"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:58
+msgid "Method Title"
+msgstr "Toimitustavan otsikko"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:60
+msgid "This controls the title which the user sees during checkout."
+msgstr "Tämä teksti näytetään kassalla toimitustapana asiakkaille."
+
+#: inc/class-wc-kaukokiito-shipping-method.php:61
+msgid "Ship to Kaukokiito Terminal"
+msgstr "Toimita Kaukokiidon terminaalehin"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:65
+msgid "Availability"
+msgstr "Saatavuus"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:70
+msgid "All allowed countries"
+msgstr "Kaikkiin maihin"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:71
+#: inc/class-wc-kaukokiito-shipping-method.php:75
+msgid "Specific Countries"
+msgstr "Ainoastaan tiettyihin maihin"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:82
+msgid "Select some countries"
+msgstr "Valitse maat"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:86
+msgid "Tax Status"
+msgstr "Verotus"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:91
+msgid "Taxable"
+msgstr "Verotettava"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:92
+msgctxt "Tax status"
+msgid "None"
+msgstr "Ei mitään"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:96
+msgid "Cost"
+msgstr "Kustannus"
+
+#: inc/class-wc-kaukokiito-shipping-method.php:99
+msgid "Set a fixed cost"
+msgstr "Aseta kiinteä kustannus"
+
+#: woocommerce-kaukokiito.php:79
+msgid "Choose your Kaukokiito Terminal"
+msgstr "Valitse lähin Kaukokiito-terminaali"
+
+#: woocommerce-kaukokiito.php:79
+msgid "required"
+msgstr "vaaditaan"
+
+#: woocommerce-kaukokiito.php:81 woocommerce-kaukokiito.php:131
+msgid "Choose a Terminal"
+msgstr "Valitse Terminaali"
+
+#: woocommerce-kaukokiito.php:160
+msgid "<strong>Kaukokiito Terminal</strong> is a required field."
+msgstr "<strong>Kaukokiito Terminaali</strong> on pakollinen kenttä."
+
+#: woocommerce-kaukokiito.php:171
+msgid "Terminal:"
+msgstr "Terminaali:"
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce Kaukokiito Shipping Method"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/anttiviljami/woocommerce-kaukokiito"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Fixed price shipping method for Kaukokiito terminals"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Seravo Oy"
+msgstr ""
