@@ -44,7 +44,7 @@ class WC_Kaukokiito {
     add_action( 'woocommerce_before_order_notes', array( $this, 'dropdown' ), 10, 1 );
     add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'update_order_meta' ) );
     add_action( 'woocommerce_admin_order_data_after_billing_address', array( $this, 'display_admin_order_meta' ), 10, 1 );
-    add_action( 'woocommerce_checkout_process', array( $this, 'checkout_field_process' ) ); 
+    add_action( 'woocommerce_checkout_process', array( $this, 'checkout_field_process' ) );
   }
 
   /**
@@ -115,8 +115,8 @@ class WC_Kaukokiito {
 $(document).ready(function() {
   // only show if shipping method is kaukokiito
   function toggleTerminalSelect() {
-    console.log('debug');
-    if( $('input.shipping_method:checked').val() === 'kaukokiito' ) {
+    if( $('input.shipping_method:checked').val() === 'kaukokiito'
+        || $('.shipping_method option:selected').val() === 'kaukokiito') {
       $('#kaukokiito_field').show();
     }
     else {
@@ -124,10 +124,11 @@ $(document).ready(function() {
     }
   }
   $(document).on('change', '#shipping_method input:radio', toggleTerminalSelect);
+  $(document).on('change', 'select.shipping_method', toggleTerminalSelect);
   toggleTerminalSelect();
   // use select2 if available
   if( $().select2 ) {
-    $('select[name="kaukokiito_terminal"]').select2({ 
+    $('select[name="kaukokiito_terminal"]').select2({
       placeholder: "<?php _e( 'Choose a Terminal', 'woocommerce-kaukokiito'); ?>",
       placeholderOption: 'first'
     });
@@ -142,7 +143,7 @@ $(document).ready(function() {
    * Update the Order Meta With Field Value
    *
    * @return void
-   */  
+   */
   function update_order_meta( $order_id ) {
     if ( ! empty( $_POST['kaukokiito_terminal'] ) ) {
       update_post_meta( $order_id, 'kaukokiito_terminal', sanitize_text_field( $_POST['kaukokiito_terminal'] ) );
@@ -153,24 +154,24 @@ $(document).ready(function() {
    * Process the checkout
    *
    * @return void
-   */  
+   */
   function checkout_field_process() {
     // Check if set, if its not set add an error.
     if ( ! $_POST['kaukokiito_terminal'] ) {
       wc_add_notice( __( '<strong>Kaukokiito Terminal</strong> is a required field.', 'woocommerce-kaukokiito' ), 'error' );
     }
-  } 
+  }
 
   /**
    * Display field value on the order edit page
    *
    * @return void
-   */  
+   */
   function display_admin_order_meta( $order ){
 ?>
 <p><strong><?php _e( 'Terminal:', 'woocommerce-kaukokiito' ); ?></strong> <?php echo get_post_meta( $order->id, 'kaukokiito_terminal', true ); ?></p>
 <?php
-  } 
+  }
 
 }
 
