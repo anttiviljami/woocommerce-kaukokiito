@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Kaukokiito Shipping Method\n"
 "POT-Creation-Date: 2015-12-14 21:58+0200\n"
-"PO-Revision-Date: 2015-12-14 21:58+0200\n"
+"PO-Revision-Date: 2015-12-15 08:44+0200\n"
 "Last-Translator: Antti Kuosmanen <antti@seravo.fi>\n"
 "Language-Team: Antti Kuosmanen <antti@seravo.fi>\n"
 "Language: fi\n"
@@ -26,7 +26,7 @@ msgstr "Kaukokiito"
 
 #: inc/class-wc-kaukokiito-shipping-method.php:20
 msgid "Ship to a preset list of Kaukokiito Terminals"
-msgstr "Toimita Kaukokiidon terminaalehin"
+msgstr "Lähimpään Kaukokiidon Terminaaliin"
 
 #: inc/class-wc-kaukokiito-shipping-method.php:52
 msgid "Enable/Disable"
@@ -46,7 +46,7 @@ msgstr "Tämä teksti näytetään kassalla toimitustapana asiakkaille."
 
 #: inc/class-wc-kaukokiito-shipping-method.php:61
 msgid "Ship to Kaukokiito Terminal"
-msgstr "Toimita Kaukokiidon terminaalehin"
+msgstr "Toimita Kaukokiidon Terminaaliin"
 
 #: inc/class-wc-kaukokiito-shipping-method.php:65
 msgid "Availability"
