@@ -113,20 +113,24 @@ class WC_Kaukokiito {
 <script>
 (function($){
 $(document).ready(function() {
-  // only show if shipping method is kaukokiito
+  // only show if selected shipping method is kaukokiito
   function toggleTerminalSelect() {
     if( $('input.shipping_method:checked').val() === 'kaukokiito'
-        || $('.shipping_method option:selected').val() === 'kaukokiito') {
+        || $('.shipping_method option:selected').val() === 'kaukokiito'
+        || $('input[type="hidden"].shipping_method').val() === 'kaukokiito') {
       $('#kaukokiito_field').show();
     }
     else {
       $('#kaukokiito_field').hide();
     }
   }
+
   $(document).on('change', '#shipping_method input:radio', toggleTerminalSelect);
   $(document).on('change', 'select.shipping_method', toggleTerminalSelect);
+  $(document).on('change', 'input.shipping_method', toggleTerminalSelect);
   toggleTerminalSelect();
-  // use select2 if available
+
+  // use $.select2 if available
   if( $().select2 ) {
     $('select[name="kaukokiito_terminal"]').select2({
       placeholder: "<?php _e( 'Choose a Terminal', 'woocommerce-kaukokiito'); ?>",
