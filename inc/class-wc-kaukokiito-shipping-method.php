@@ -17,7 +17,7 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
   public function __construct() {
     $this->id = 'kaukokiito';
     $this->method_title = __( 'Kaukokiito', 'woocommerce-kaukokiito' );
-    $this->method_description = __( 'Ship to a preset list of Kaukokiito Terminals', 'woocommerce-kaukokiito' ); 
+    $this->method_description = __( 'Ship to a preset list of Kaukokiito Terminals', 'woocommerce-kaukokiito' );
     $this->init();
 
 		add_action( 'woocommerce_update_options_shipping_' . $this->id, array( $this, 'process_admin_options' ) );
@@ -31,8 +31,8 @@ class WC_Kaukokiito_Shipping_Method extends WC_Shipping_Method {
    */
   public function init() {
     // Load the settings API
-    $this->init_form_fields(); 
-    $this->init_settings(); 
+    $this->init_form_fields();
+    $this->init_settings();
 
     // Define settings
 		$this->title = $this->get_option( 'title' );

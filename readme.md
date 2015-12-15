@@ -21,4 +21,3 @@ Features:
 ### Choose a terminal during checkout
 ![Checkout page](/assets/screenshot-2.png)
 
-
